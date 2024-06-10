@@ -1,2 +1,26 @@
-# llm-zero-prompt-for-dot-net
-LLM-Zero-Prompt is an open .NET library to enable easy interaction with LLM, with out getting into prompting. 
+# LLM-Zero-Prompt for .NET
+
+LLM-Zero-Prompt for .NET is a code-first library designed for seamless interaction with large language models, such as those developed by OpenAI. This library addresses the inherent fragility of traditional prompting methods in large language models. Handcrafted prompts often become ineffective when models change, primarily due to model drift.
+
+## Overview
+
+At Open Agentic, our team developed LLM-Zero-Prompt as an integral part of our Open Agentic Commander Platform. Our objective was to mitigate the issues associated with prompt brittleness and model drift. We achieved this by incorporating the library and optimized prompt packs tailored for specific large language models. These prompt packs are model-specific and integrated into the connectors used to interface with the models. Switching models or connector families requires loading and utilizing a new optimized prompt pack.
+
+## Features
+
+### Optimized Prompt Packs
+- **Model-Specific**: Each prompt pack is optimized for a specific model.
+- **Connector Integration**: Prompt packs are part of the connector used to connect to the LLM.
+- **Seamless Switching**: Changing models or connector families involves loading a new optimized prompt pack.
+
+### Return Value Type Definition
+- **As Functions**: Includes several `As` functions like `AsString` and `AsBoolean`.
+- **Correct Value Type**: Ensures the model returns the correct value type.
+- **Validation**: Carries out validation of the correct value type.
+
+## Installation
+
+To install LLM-Zero-Prompt, follow these steps:
+
+```sh
+# Installation command
