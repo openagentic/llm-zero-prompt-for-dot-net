@@ -1,4 +1,4 @@
-# LLM-Zero-Prompt for .NET
+# LLM-Zero-Prompt for .NET (There is also a Python version on the say in coming days)
 
 LLM-Zero-Prompt for .NET is a code-first library designed for seamless interaction with large language models, such as those developed by OpenAI. This library addresses the inherent fragility of traditional prompting methods in large language models. Handcrafted prompts often become ineffective when models change, primarily due to model drift.
 
