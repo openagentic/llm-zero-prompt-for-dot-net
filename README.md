@@ -18,9 +18,12 @@ We achieved this by incorporating the library and optimized prompt packs tailore
 These prompt packs are model-specific and integrated into the connectors used to interface with the models. 
 Switching models or connector families requires loading and utilizing a new optimized prompt pack.
 
+
+## Wiki Pages 
+The Wiki pages for this project is located here: https://bit.ly/3Xiqv88
+
 ## Git Repository
 The GITHub repository for this project is located here: https://bit.ly/3KD3yoL
-
 
 ## Getting Started with Visual Studio 2022 (Using Clone Of GitHub Repository)
 
