@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Title>LLM-Zero-Prompt-OpenAI</Title>
+		<Authors>Open Agentic Labs</Authors>
+		<Product>LLM-ZeroPrompt</Product>
+		<Description>LLM-Zero-Prompt is a library desinged to provide a no prompt development experence for the developer. </Description>
+		<Copyright>Open Agentic Labs</Copyright>
+		<PackageProjectUrl>https://www.openagenticlabs.com</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/openagentic/llm-zero-prompt-for-dot-net</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="OptimisedPromptPack\gpt_3_5_turbo\create_azure_bicep\llm_optimized_prompt_pack_create_azure_bicep_gpt-3.5-turbo.json" />
+		<None Remove="OptimisedPromptPack\gpt_3_5_turbo\create_azure_powershell_script\llm_optimized_prompt_pack_create_powershell_script_gpt-3.5-turbo.json" />
+		<None Remove="OptimisedPromptPack\gpt_3_5_turbo\grammar_correction\llm_optimized_prompt_pack_grammar_correction_gpt-3.5-turbo.json" />
+		<None Remove="OptimisedPromptPack\gpt_3_5_turbo\named_entity_recognition\llm_optimized_prompt_pack_named_entity_recognition_gpt-3.5-turbo.json" />
+		<None Remove="OptimisedPromptPack\gpt_3_5_turbo\paraphrasing\llm_optimized_prompt_pack_paraphrasing_gpt-3.5-turbo.json" />
+		<None Remove="OptimisedPromptPack\gpt_3_5_turbo\question_answer\llm_optimized_prompt_pack_question_answer_gpt-3.5-turbo.json" />
+		<None Remove="OptimisedPromptPack\gpt_3_5_turbo\sentiment_slassification\llm_optimized_prompt_pack_sentiment_slassification_gpt-3.5-turbo.json" />
+		<None Remove="OptimisedPromptPack\gpt_3_5_turbo\text_completion\llm_optimized_prompt_pack_text_completion_gpt-3.5-turbo.json" />
+		<None Remove="OptimisedPromptPack\gpt_3_5_turbo\text_simplification\llm_optimized_prompt_pack_text_simplification_gpt-3.5-turbo.json" />
+		<None Remove="OptimisedPromptPack\gpt_3_5_turbo\text_summarization\llm_optimized_prompt_pack_text_summarization_gpt-3.5-turbo.json" />
+		<None Remove="OptimisedPromptPack\gpt_3_5_turbo\validate_azure_bicep\llm_optimized_prompt_pack_validate_azure_bicep_gpt-3.5-turbo.json" />
+		<None Remove="OptimisedPromptPack\llm_optimized_prompt_packs.json" />
+		<None Remove="OptimisedPromptPack\llm_supported_models.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="OptimisedPromptPack\gpt_3_5_turbo\create_azure_bicep\llm_optimized_prompt_pack_create_azure_bicep_gpt-3.5-turbo.json" />
+		<EmbeddedResource Include="OptimisedPromptPack\gpt_3_5_turbo\create_azure_powershell_script\llm_optimized_prompt_pack_create_powershell_script_gpt-3.5-turbo.json" />
+		<EmbeddedResource Include="OptimisedPromptPack\gpt_3_5_turbo\grammar_correction\llm_optimized_prompt_pack_grammar_correction_gpt-3.5-turbo.json" />
+		<EmbeddedResource Include="OptimisedPromptPack\gpt_3_5_turbo\named_entity_recognition\llm_optimized_prompt_pack_named_entity_recognition_gpt-3.5-turbo.json" />
+		<EmbeddedResource Include="OptimisedPromptPack\gpt_3_5_turbo\paraphrasing\llm_optimized_prompt_pack_paraphrasing_gpt-3.5-turbo.json" />
+		<EmbeddedResource Include="OptimisedPromptPack\gpt_3_5_turbo\question_answer\llm_optimized_prompt_pack_question_answer_gpt-3.5-turbo.json" />
+		<EmbeddedResource Include="OptimisedPromptPack\gpt_3_5_turbo\sentiment_slassification\llm_optimized_prompt_pack_sentiment_slassification_gpt-3.5-turbo.json" />
+		<EmbeddedResource Include="OptimisedPromptPack\gpt_3_5_turbo\text_completion\llm_optimized_prompt_pack_text_completion_gpt-3.5-turbo.json" />
+		<EmbeddedResource Include="OptimisedPromptPack\gpt_3_5_turbo\text_simplification\llm_optimized_prompt_pack_text_simplification_gpt-3.5-turbo.json" />
+		<EmbeddedResource Include="OptimisedPromptPack\gpt_3_5_turbo\text_summarization\llm_optimized_prompt_pack_text_summarization_gpt-3.5-turbo.json" />
+		<EmbeddedResource Include="OptimisedPromptPack\gpt_3_5_turbo\validate_azure_bicep\llm_optimized_prompt_pack_validate_azure_bicep_gpt-3.5-turbo.json" />
+		<EmbeddedResource Include="OptimisedPromptPack\llm_optimized_prompt_packs.json" />
+		<EmbeddedResource Include="OptimisedPromptPack\llm_supported_models.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\OpenAgenticLabs.LLMZeroPrompt.Core\OpenAgenticLabs.LLMZeroPrompt.Core.csproj" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<Version>1.0.2</Version>
+		<AssemblyVersion>1.0.0.2</AssemblyVersion>
+		<FileVersion>1.0.0.2</FileVersion>
+	</PropertyGroup>
+
+
+</Project>

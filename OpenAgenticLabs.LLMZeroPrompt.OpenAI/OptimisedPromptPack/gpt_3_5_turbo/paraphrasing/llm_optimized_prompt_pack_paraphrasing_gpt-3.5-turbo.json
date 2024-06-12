@@ -1,0 +1,74 @@
+{
+  "optimizedPromptPackItem": [
+    {
+      "name": "OpenAI_GPT_3.5_Turbo",
+      "description": "Set of optimizations for Paraphrasing.",
+      "owner": "development@openagentic.com",
+      "version": "1.0.0",
+      "vendor": "OpenAI",
+      "createdBy": "development@openagentic.com",
+      "createdDate": "01/01/2024",
+      "updatedDate": "01/01/2024",
+      "updatedBy": "development@openagentic.com",
+      "targets": [
+        {
+          "targetType": "Paraphrasing",
+          "inputTargetType": "Sentence",
+          "outputTargetType": "Sentence",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.3,
+              "topP": 0.9,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "input",
+                  "description": "The <input> field is a text field to be paraphrase, with the output goint to <output> field",
+                  "format": "Sentence",
+                  "maxChar": 1024,
+                  "minChar": 50,
+                  "minWords": 10,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "output",
+                  "description": "The <output> field is the result form paraphrasing the <input> field",
+                  "format": "Sentence",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 20,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "The quick brown fox jumps over the lazy dog.\r\n A swift, brown fox leaps above a lounging canine."
+                },
+                {
+                  "example": "The sun was setting, painting the sky with vibrant hues of orange and pink.\r\n As the sun descended, it transformed the heavens into a breathtaking canvas of vivid tangerine and rose tones."
+                },
+                {
+                  "example": "The old man walked slowly down the street, leaning heavily on his cane.\r\n The elderly gentleman ambled along the road, relying significantly on his walking stick for support."
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

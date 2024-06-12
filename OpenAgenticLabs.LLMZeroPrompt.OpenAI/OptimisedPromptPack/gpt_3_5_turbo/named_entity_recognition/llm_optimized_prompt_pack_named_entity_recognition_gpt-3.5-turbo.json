@@ -1,0 +1,74 @@
+{
+  "optimizedPromptPackItem": [
+    {
+      "name": "OpenAI_GPT_3.5_Turbo",
+      "description": "Set of optimizations for named_entity_recognition.",
+      "owner": "development@openagentic.com",
+      "version": "1.0.3",
+      "vendor": "OpenAI",
+      "createdBy": "development@openagentic.com",
+      "createdDate": "01/01/2024",
+      "updatedDate": "01/01/2024",
+      "updatedBy": "development@openagentic.com",
+      "targets": [
+        {
+          "targetType": "NamedEntityRecognition",
+          "inputTargetType": "Paragraph",
+          "outputTargetType": "JsonArrayKeyValuePairs",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.3,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "paragraph ",
+                  "description": "The <paragraph> field contains the text input to preform Named Entity Recognition and then output to <json_array_key_value_pairs> field.",
+                  "format": "Paragraph",
+                  "maxChar": 2048,
+                  "minChar": 100,
+                  "minWords": 20,
+                  "maxWords": 500,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "json_array_key_value_pairs",
+                  "description": "The <json_array_key_value_pairs> field contains the JSON array of key value pairs produced from Named Entity Recognition process on the <paragraph> text input. ",
+                  "format": "JsonArrayKeyValuePairs",
+                  "maxChar": 512,
+                  "minChar": 20,
+                  "minWords": 5,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "Apple Inc. reported a revenue of $111.4 billion in the last quarter.\r\n [{\"type\": \"Organization\", \"text\": \"Apple Inc.\"},{\"type\": \"Money\", \"text\": \"$111.4 billion\"},{\"type\": \"Date\", \"text\": \"last quarter\"}]"
+                },
+                {
+                  "example": "The patient, John Doe, was admitted to General Hospital on May 5th, 2024, complaining of chest pain.\r\n [{\"type\": \"Person\", \"text\": \"John Doe\"},{\"type\": \"Organization\", \"text\": \"General Hospital\"},{\"type\": \"Date\", \"text\": \"May 5th, 2024\"}]"
+                },
+                {
+                  "example": "In the case of Smith v. Johnson, the court ruled in favor of the plaintiff.\r\n [{\"type\": \"Person\", \"text\": \"Smith\"},{\"type\": \"Person\", \"text\": \"Johnson\"},{\"type\": \"Legal Case\", \"text\": \"Smith v. Johnson\"}]"
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n\n{{Examples}}\n\n---\n\nInstruction: Preform Named Entity Recognition on <paragraph> field and out put to <json_array_key_value_pairs> field as a JSON formatted array of key value pairs.\n\n---\n\n\n{{Action}}?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

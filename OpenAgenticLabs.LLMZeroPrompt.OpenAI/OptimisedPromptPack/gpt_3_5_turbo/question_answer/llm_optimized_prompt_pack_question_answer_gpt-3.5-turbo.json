@@ -1,0 +1,248 @@
+{
+  "optimizedPromptPackItem": [
+    {
+      "name": "OpenAI_GPT_3.5_Turbo",
+      "description": "Set of optimizations for GPT_3.5_Turbo Question Answer.",
+      "owner": "development@openagentic.com",
+      "version": "1.0.0",
+      "vendor": "OpenAI",
+      "createdBy": "development@openagentic.com",
+      "createdDate": "01/01/2024",
+      "updatedDate": "01/01/2024",
+      "updatedBy": "development@openagentic.com",
+      "targets": [
+        {
+          "targetType": "QuestionAnswer",
+          "inputTargetType": "Sentence",
+          "outputTargetType": "Boolean",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.2,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "question",
+                  "description": "is a sentence, used as input to create the <answer> field",
+                  "format": "Sentence",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 1,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": false
+                }
+              ],
+              "Output": [
+                {
+                  "type": "bool",
+                  "tag": "answer",
+                  "description": "is a boolean, created by searching for the answer in the <question> field",
+                  "format": "Boolean",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 1,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": false
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "A dog has 5 legs? false"
+                },
+                {
+                  "example": "A car normally flys? false"
+                },
+                {
+                  "example": "An orange is a fruit? true"
+                },
+                {
+                  "example": "A man has two eyes? true"
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        },
+        {
+          "targetType": "QuestionAnswer",
+          "inputTargetType": "Sentence",
+          "outputTargetType": "Double",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.2,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "question",
+                  "description": "is a sentence, used as input to create the <answer> field",
+                  "format": "Sentence",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 1,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": false
+                }
+              ],
+              "Output": [
+                {
+                  "type": "double",
+                  "tag": "answer",
+                  "description": "is a number, created by searching for the answer in the <question> field",
+                  "format": "Double",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 1,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": false
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "What is the population of the UK? 69430000.00"
+                },
+                {
+                  "example": "How many people play tennis singles? 2.00"
+                },
+                {
+                  "example": "How many counteries in europe? 44.00"
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        },
+        {
+          "targetType": "QuestionAnswer",
+          "inputTargetType": "Sentence",
+          "outputTargetType": "SingleWord",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.2,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "question",
+                  "description": "is a sentence, used as input to create the <answer> field",
+                  "format": "Sentence",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 1,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": false
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "answer",
+                  "description": "is a single word, created by searching for the answer in the <question> field",
+                  "format": "SingleWord",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 1,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": false
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "What is the capital of France? Paris"
+                },
+                {
+                  "example": "Which element has the chemical symbol 'O'? Oxygen"
+                },
+                {
+                  "example": "What is the hardest natural substance on Earth? Diamond"
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        },
+        {
+          "targetType": "QuestionAnswer",
+          "inputTargetType": "Sentence",
+          "outputTargetType": "Sentence",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.3,
+              "topP": 0.9,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "question",
+                  "description": "is a question, used as input to create the <answer> field",
+                  "format": "Sentence",
+                  "maxChar": 1024,
+                  "minChar": 50,
+                  "minWords": 10,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "answer",
+                  "description": "is a sentence, created by answering the <question> field",
+                  "format": "Sentence",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 20,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "What is the capital of France? Paris is the capital of france."
+                },
+                {
+                  "example": "Which element has the chemical symbol 'O'? Oxygen is the element symbol 'O'."
+                },
+                {
+                  "example": "What is the hardest natural substance on Earth? Diamond is the hardest natural substance on earth."
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

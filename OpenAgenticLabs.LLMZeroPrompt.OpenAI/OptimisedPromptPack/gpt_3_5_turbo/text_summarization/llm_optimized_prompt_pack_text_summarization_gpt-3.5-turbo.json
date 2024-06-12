@@ -1,0 +1,74 @@
+{
+  "optimizedPromptPackItem": [
+    {
+      "name": "OpenAI_GPT_3.5_Turbo",
+      "description": "Set of optimizations for Text Summarization.",
+      "owner": "development@openagentic.com",
+      "version": "1.0.3",
+      "vendor": "OpenAI",
+      "createdBy": "development@openagentic.com",
+      "createdDate": "01/01/2024",
+      "updatedDate": "01/01/2024",
+      "updatedBy": "development@openagentic.com",
+      "targets": [
+        {
+          "targetType": "TextSummarization",
+          "inputTargetType": "Paragraph",
+          "outputTargetType": "Summary",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.3,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "paragraph",
+                  "description": "The <paragraph> field contains the text to be summarized.",
+                  "format": "Paragraph",
+                  "maxChar": 2048,
+                  "minChar": 100,
+                  "minWords": 20,
+                  "maxWords": 500,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "summary",
+                  "description": "The <summary> field contains the summarized version of the <paragraph> field.",
+                  "format": "Summary",
+                  "maxChar": 512,
+                  "minChar": 20,
+                  "minWords": 5,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "Summarize the following text: 'The quick brown fox jumps over the lazy dog. This is a well-known pangram used for typing practice.'.\r\n A quick brown fox jumps over a lazy dog in a famous pangram used for typing practice."
+                },
+                {
+                  "example": "Summarize the following text: 'Artificial intelligence (AI) is intelligence demonstrated by machines, in contrast to the natural intelligence displayed by humans and animals.'.\r\n AI is intelligence demonstrated by machines, unlike natural intelligence of humans and animals."
+                },
+                {
+                  "example": "Summarize the following text: 'The Mona Lisa is a half-length portrait painting by the Italian artist Leonardo da Vinci.'.\r\n The Mona Lisa is a portrait by Leonardo da Vinci."
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n\n{{Examples}}\n\n---\n\nInstruction: The summary needs to have minimum of {{NumberOfWords}} words.\n\n---\n\n\n{{Action}}?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

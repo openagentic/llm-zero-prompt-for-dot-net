@@ -1,0 +1,46 @@
+{
+
+  "promptPacks": [
+    {
+      "name": "OpenAgenticLabs.LLMZeroPrompt.OpenAI.OptimisedPromptPack.gpt_3_5_turbo.question_answer.llm_optimized_prompt_pack_question_answer_gpt-3.5-turbo.json"
+    },
+    {
+      "name": "OpenAgenticLabs.LLMZeroPrompt.OpenAI.OptimisedPromptPack.gpt_3_5_turbo.sentiment_slassification.llm_optimized_prompt_pack_sentiment_slassification_gpt-3.5-turbo.json"
+    },
+    {
+      "name": "OpenAgenticLabs.LLMZeroPrompt.OpenAI.OptimisedPromptPack.gpt_3_5_turbo.text_summarization.llm_optimized_prompt_pack_text_summarization_gpt-3.5-turbo.json"
+    },
+    {
+      "name": "OpenAgenticLabs.LLMZeroPrompt.OpenAI.OptimisedPromptPack.gpt_3_5_turbo.named_entity_recognition.llm_optimized_prompt_pack_named_entity_recognition_gpt-3.5-turbo.json"
+    },
+    {
+      "name": "OpenAgenticLabs.LLMZeroPrompt.OpenAI.OptimisedPromptPack.gpt_3_5_turbo.text_completion.llm_optimized_prompt_pack_text_completion_gpt-3.5-turbo.json"
+    },
+    {
+      "name": "OpenAgenticLabs.LLMZeroPrompt.OpenAI.OptimisedPromptPack.gpt_3_5_turbo.paraphrasing.llm_optimized_prompt_pack_paraphrasing_gpt-3.5-turbo.json"
+    },
+    {
+      "name": "OpenAgenticLabs.LLMZeroPrompt.OpenAI.OptimisedPromptPack.gpt_3_5_turbo.grammar_correction.llm_optimized_prompt_pack_grammar_correction_gpt-3.5-turbo.json"
+    },
+    {
+      "name": "OpenAgenticLabs.LLMZeroPrompt.OpenAI.OptimisedPromptPack.gpt_3_5_turbo.text_simplification.llm_optimized_prompt_pack_text_simplification_gpt-3.5-turbo.json"
+    },
+    {
+      "name": "OpenAgenticLabs.LLMZeroPrompt.OpenAI.OptimisedPromptPack.gpt_3_5_turbo.create_azure_bicep.llm_optimized_prompt_pack_create_azure_bicep_gpt-3.5-turbo.json"
+    },
+    {
+      "name": "OpenAgenticLabs.LLMZeroPrompt.OpenAI.OptimisedPromptPack.gpt_3_5_turbo.validate_azure_bicep.llm_optimized_prompt_pack_validate_azure_bicep_gpt-3.5-turbo.json"
+    },
+    {
+      "name": "OpenAgenticLabs.LLMZeroPrompt.OpenAI.OptimisedPromptPack.gpt_3_5_turbo.create_azure_powershell_script.llm_optimized_prompt_pack_create_powershell_script_gpt-3.5-turbo.json"
+    },
+    {
+      "name": "OpenAgenticLabs.LLMZeroPrompt.OpenAI.OptimisedPromptPack.gpt_4.question_answer.llm_optimized_prompt_pack_gpt-4.json"
+
+    }
+
+  ]
+}
+
+
+

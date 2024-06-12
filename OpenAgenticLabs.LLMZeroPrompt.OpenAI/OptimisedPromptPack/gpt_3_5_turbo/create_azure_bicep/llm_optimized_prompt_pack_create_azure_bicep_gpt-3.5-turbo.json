@@ -1,0 +1,68 @@
+{
+  "optimizedPromptPackItem": [
+    {
+      "name": "OpenAI_GPT_3.5_Turbo",
+      "description": "Set of optimizations creating an azure bicep template.",
+      "owner": "development@openagentic.com",
+      "version": "1.0.0",
+      "vendor": "OpenAI",
+      "createdBy": "development@openagentic.com",
+      "createdDate": "01/01/2024",
+      "updatedDate": "01/01/2024",
+      "updatedBy": "development@openagentic.com",
+      "targets": [
+        {
+          "targetType": "CreateMicrosoftBICEPTemplate",
+          "inputTargetType": "Paragraph",
+          "outputTargetType": "AzureBICEPTemplate",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.2,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "microsoft_Azure_BICEP_Templeate_Requireemnts",
+                  "description": "<microsoft_Azure_BICEP_Templeate_Requireemnts> field details the requirements for the creation of a single Azure BICEP Template to be output to <microsoft_Azure_BICEP_Templeate> field",
+                  "format": "Paragraph",
+                  "maxChar": 1024,
+                  "minChar": 10,
+                  "minWords": 2,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "microsoft_Azure_BICEP_Templeate",
+                  "description": "<microsoft_Azure_BICEP_Templeate> field is a single Microsoft BICEP Template created from the requirements in the <microsoft_Azure_BICEP_Templeate_Requireemnts> field",
+                  "format": "AzureBICEPTemplate",
+                  "maxChar": 1024,
+                  "minChar": 10,
+                  "minWords": 2,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "Create a Azure BICEP template for creating a Storage Account in the Microsoft Azure cloud:\r\n param location string = resourceGroup().location\r\nparam storageAccountName string = 'storage${uniqueString(resourceGroup().id)}'\r\n\r\nresource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {\r\nname: storageAccountName\r\nlocation: location\r\nsku: {\r\nname: 'Standard_LRS'\r\n}\r\nkind: 'StorageV2'\r\n}\r\n"
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}> and do not give any description or information text, only create the BICEP template.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

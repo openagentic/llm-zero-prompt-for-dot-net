@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.34909.67
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenAgenticLabs.LLMZeroPrompt", "OpenAgenticLabs.LLMZeroPrompt\OpenAgenticLabs.LLMZeroPrompt.csproj", "{F84D9EEA-06B6-4745-8382-FC06E0B0905E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenAgenticLabs.LLMZeroPrompt.Core", "OpenAgenticLabs.LLMZeroPrompt.Core\OpenAgenticLabs.LLMZeroPrompt.Core.csproj", "{1FD60FA7-E4E7-4A57-B823-5CA8656BFB39}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenAgenticLabs.LLMZeroPrompt.OpenAI", "OpenAgenticLabs.LLMZeroPrompt.OpenAI\OpenAgenticLabs.LLMZeroPrompt.OpenAI.csproj", "{3AA3B1BA-FD4E-486B-A629-3033F3016889}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ConsoleAppTest", "OpenAgenticLabs.LLMZeroPrompt.Python.ConsoleAppTest\ConsoleAppTest\ConsoleAppTest.pyproj", "{61C25C0B-500D-4CBE-925D-43AB880C9D6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F84D9EEA-06B6-4745-8382-FC06E0B0905E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F84D9EEA-06B6-4745-8382-FC06E0B0905E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F84D9EEA-06B6-4745-8382-FC06E0B0905E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F84D9EEA-06B6-4745-8382-FC06E0B0905E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FD60FA7-E4E7-4A57-B823-5CA8656BFB39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FD60FA7-E4E7-4A57-B823-5CA8656BFB39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FD60FA7-E4E7-4A57-B823-5CA8656BFB39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FD60FA7-E4E7-4A57-B823-5CA8656BFB39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AA3B1BA-FD4E-486B-A629-3033F3016889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AA3B1BA-FD4E-486B-A629-3033F3016889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AA3B1BA-FD4E-486B-A629-3033F3016889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AA3B1BA-FD4E-486B-A629-3033F3016889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61C25C0B-500D-4CBE-925D-43AB880C9D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61C25C0B-500D-4CBE-925D-43AB880C9D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26694DD7-9DC0-44B4-AE22-196241F6B777}
+	EndGlobalSection
+EndGlobal

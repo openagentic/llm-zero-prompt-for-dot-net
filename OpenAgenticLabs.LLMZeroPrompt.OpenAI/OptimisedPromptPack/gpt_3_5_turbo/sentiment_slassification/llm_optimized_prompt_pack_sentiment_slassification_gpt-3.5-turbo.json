@@ -1,0 +1,257 @@
+{
+  "optimizedPromptPackItem": [
+    {
+      "name": "OpenAI_GPT_3.5_Turbo",
+      "description": "Set of optimizations for Sentiment Classification.",
+      "owner": "development@openagentic.com",
+      "version": "1.0.3",
+      "vendor": "OpenAI",
+      "createdBy": "development@openagentic.com",
+      "createdDate": "01/01/2024",
+      "updatedDate": "01/01/2024",
+      "updatedBy": "development@openagentic.com",
+      "targets": [
+        {
+          "targetType": "SentimentClassification",
+          "inputTargetType": "Sentence",
+          "outputTargetType": "SingleWord",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.2,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "statement",
+                  "description": "The <statement> field is a statement to be analyzed for Sentiment Classification, with the single word output to the <classification> field",
+                  "format": "Sentence",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 50,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": false
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "classification",
+                  "description": "The <classification> field is a single word Sentiment Classification of the <statement> field",
+                  "format": "SingleWord",
+                  "maxChar": 20,
+                  "minChar": 3,
+                  "minWords": 1,
+                  "maxWords": 1,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": false
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "Classify the sentiment in the following text as Positive or Negative: 'This movie was a complete waste of time.'.\r\n Negative"
+                },
+                {
+                  "example": "Classify the sentiment in the following text  as Positive or Negative: 'I highly recommend this book to anyone.'.\r\n Positive"
+                },
+                {
+                  "example": "Classify the sentiment in the following text  as Positive or Negative: 'The customer service at this store is horrendous.'.\r\n Negative"
+                },
+                {
+                  "example": "Classify the sentiment in the following text  as Positive or Negative: 'I am so grateful for the support from my friends.'.\r\n Positive"
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        },
+        {
+          "targetType": "SentimentClassification",
+          "inputTargetType": "Sentence",
+          "outputTargetType": "Double",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.2,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "statement",
+                  "description": "The <statement> field is a text to be analyzed for Sentiment Classification and scored with a numeric value and output as <sentiment_score> field",
+                  "format": "Sentence",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 50,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": false
+                }
+              ],
+              "Output": [
+                {
+                  "type": "double",
+                  "tag": "sentiment_score",
+                  "description": "The <sentiment_score> is a numeric value field created from the analyzed Sentiment Classification of the <statement> field",
+                  "format": "Double",
+                  "maxChar": 20,
+                  "minChar": 1,
+                  "minWords": 1,
+                  "maxWords": 1,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": false
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "Classify the sentiment in the following text from Positive value of 10 to a Negative value of -10: 'This movie was a complete waste of time.'.\r\n -10"
+                },
+                {
+                  "example": "Classify the sentiment in the following text from Positive value of 10 to a Negative value of -10: ''I highly recommend this book to anyone.'.\r\n 10"
+                },
+                {
+                  "example": "Classify the sentiment in the following text from Positive value of 10 to a Negative value of -10: ''The customer service at this store is horrendous.'.\r\n -10"
+                },
+                {
+                  "example": "Classify the sentiment in the following text from Positive value of 10 to a Negative value of -10: ''I am so grateful for the support from my friends.'.\r\n 10"
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        },
+        {
+          "targetType": "SentimentClassification",
+          "inputTargetType": "Sentence",
+          "outputTargetType": "boolean",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.2,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "statement",
+                  "description": "The <statement> field is a statement to be analyzed for Sentiment Classification, with the true/false output to the <classification> field",
+                  "format": "Sentence",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 50,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": false
+                }
+              ],
+              "Output": [
+                {
+                  "type": "boolean",
+                  "tag": "classification",
+                  "description": "The <classification> field is a true/false Sentiment Classification of the <statement> field",
+                  "format": "Boolean",
+                  "maxChar": 5,
+                  "minChar": 4,
+                  "minWords": 1,
+                  "maxWords": 1,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": false
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "Is the statement positive in the follwing text: 'This movie was a complete waste of time.'.\r\n False"
+                },
+                {
+                  "example": "Is the statement positive in the follwing text: 'I highly recommend this book to anyone.'.\r\n True"
+                },
+                {
+                  "example": "Is the statement positive in the follwing text: 'The customer service at this store is horrendous.'.\r\n False"
+                },
+                {
+                  "example": "Is the statement positive in the follwing text: 'I am so grateful for the support from my friends.'.\r\n True"
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        },
+        {
+          "targetType": "SentimentClassification",
+          "inputTargetType": "Sentence",
+          "outputTargetType": "Sentence",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.3,
+              "topP": 0.9,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "statement",
+                  "description": "The <statement> field is a statement to be analyzed for Sentiment Classification, with output statement going to <classification> field",
+                  "format": "Sentence",
+                  "maxChar": 1024,
+                  "minChar": 50,
+                  "minWords": 10,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "classification",
+                  "description": "The <classification> field is a statement text from the analyzed Sentiment Classification of the <statement> field",
+                  "format": "Sentence",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 50,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "Classify the sentiment in the following text: 'This movie was a complete waste of time.'.\r\n The text was classified as Negative."
+                },
+                {
+                  "example": "Classify the sentiment in the following text: 'I highly recommend this book to anyone.'.\r\n The text was classified as Positive."
+                },
+                {
+                  "example": "Classify the sentiment in the following text: 'The customer service at this store is horrendous.'.\r\n The text was classified as Negative."
+                },
+                {
+                  "example": "Classify the sentiment in the following text: 'I am so grateful for the support from my friends.'.\r\n The text was classified as Positive."
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

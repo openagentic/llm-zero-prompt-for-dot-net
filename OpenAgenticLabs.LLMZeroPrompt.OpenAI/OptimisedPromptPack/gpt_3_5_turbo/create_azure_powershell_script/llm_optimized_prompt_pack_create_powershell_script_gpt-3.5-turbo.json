@@ -1,0 +1,68 @@
+{
+  "optimizedPromptPackItem": [
+    {
+      "name": "OpenAI_GPT_3.5_Turbo",
+      "description": "Set of optimizations for creating an azure powershell script.",
+      "owner": "development@openagentic.com",
+      "version": "1.0.0",
+      "vendor": "OpenAI",
+      "createdBy": "development@openagentic.com",
+      "createdDate": "01/01/2024",
+      "updatedDate": "01/01/2024",
+      "updatedBy": "development@openagentic.com",
+      "targets": [
+        {
+          "targetType": "CreateAzurePowerShellScript",
+          "inputTargetType": "AzurePowerShellScriptRequirements",
+          "outputTargetType": "AzurePowerShellScript",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.2,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "microsoft_PowerShell_Script_For_Azure_Requiremnts",
+                  "description": "<microsoft_PowerShell_Script_For_Azure_Requiremnts> field details the requirements for the creation of a single PowerShell script for use with Azure, to be output to <microsoft_PowerShell_Script_For_Azure> field",
+                  "format": "Paragraph",
+                  "maxChar": 1024,
+                  "minChar": 10,
+                  "minWords": 2,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "microsoft_Azure_PowerShell_Script",
+                  "description": "<microsoft_PowerShell_Script_For_Azure> field is a single Microsoft PowerShell script created from the requirements in the <microsoft_PowerShell_Script_For_Azure_Requiremnts> field",
+                  "format": "AzurePowerShellScript",
+                  "maxChar": 1024,
+                  "minChar": 10,
+                  "minWords": 2,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "Using the requirment in <microsoft_PowerShell_Script_For_Azure_Requiremnts> field, create a PowerShell script for use with Azure to create a Azure storage account: Connect-AzAccount\r\n"
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}> and do not give a description, only create the BICEP template.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

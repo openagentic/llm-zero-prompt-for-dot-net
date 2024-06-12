@@ -1,0 +1,74 @@
+{
+  "optimizedPromptPackItem": [
+    {
+      "name": "OpenAI_GPT_3.5_Turbo",
+      "description": "Set of optimizations for GPT_3.5_Turbo Grammar Correction.",
+      "owner": "development@openagentic.com",
+      "version": "1.0.0",
+      "vendor": "OpenAI",
+      "createdBy": "development@openagentic.com",
+      "createdDate": "01/01/2024",
+      "updatedDate": "01/01/2024",
+      "updatedBy": "development@openagentic.com",
+      "targets": [
+        {
+          "targetType": "GrammarCorrection",
+          "inputTargetType": "Sentence",
+          "outputTargetType": "Sentence",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.2,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "inputSentence",
+                  "description": "<inputSentence>is a text sentence that may contain grammatical errors that needs to be corrected and the result output to the <correctedSentence> field",
+                  "format": "Sentence",
+                  "maxChar": 1024,
+                  "minChar": 10,
+                  "minWords": 2,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "correctedSentence",
+                  "description": "<correctedSentence> field is the grammatically corrected version of the input <inputSentence>",
+                  "format": "Sentence",
+                  "maxChar": 1024,
+                  "minChar": 10,
+                  "minWords": 2,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "She have five apple.\r\n She has five apples."
+                },
+                {
+                  "example": "I goed to the store yesterday.\r\n I went to the store yesterday."
+                },
+                {
+                  "example": "Him is a good friend of mine\r\n He is a good friend of mine."
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

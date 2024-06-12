@@ -1,0 +1,71 @@
+{
+  "optimizedPromptPackItem": [
+    {
+      "name": "OpenAI_GPT_3.5_Turbo",
+      "description": "Set of optimizations validating an azure bicep template.",
+      "owner": "development@openagentic.com",
+      "version": "1.0.0",
+      "vendor": "OpenAI",
+      "createdBy": "development@openagentic.com",
+      "createdDate": "01/01/2024",
+      "updatedDate": "01/01/2024",
+      "updatedBy": "development@openagentic.com",
+      "targets": [
+        {
+          "targetType": "ValidateAzureBicep",
+          "inputTargetType": "AzureBICEPTemplate",
+          "outputTargetType": "Boolean",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.2,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "microsoft_Azure_BICEP_Templeate",
+                  "description": "<microsoft_Azure_BICEP_Templeate> field should be a valid Azure BICEP Template, if valid the <result> boolean field is true, else its false.",
+                  "format": "AzureBICEPTemplate",
+                  "maxChar": 1024,
+                  "minChar": 10,
+                  "minWords": 2,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "Output": [
+                {
+                  "type": "boolean",
+                  "tag": "result",
+                  "description": "<result> is boolean field, and is True if <microsoft_Azure_BICEP_Templeate> contains a valid Azure BICEP template, else ist is False.",
+                  "format": "Boolean",
+                  "maxChar": 1024,
+                  "minChar": 10,
+                  "minWords": 2,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "param location string = resourceGroup().location\r\nparam storageAccountName string = 'storage${uniqueString(resourceGroup().id)}'\r\n\r\nresource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {\r\nname: storageAccountName\r\nlocation: location\r\nsku: {\r\nname: 'Standard_LRS'\r\n}\r\nkind: 'StorageV2'\r\n}\r\n True"
+                },
+                {
+                  "example": "param location string = resourceGrouplocation\r\nparam storageAccountName string  'storage${uniqueString(resourceGroup().id)}'\r\n\r\nresource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {\r\nname: storageAccountName\r\nlocation: location\r\nsku: {\r\nname: 'Standard_LRS'\r\n}\r\nkind: torageV2'\r\n}\r\n False"
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}> and do not give a description.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "optimizedPromptPackItem": [
+    {
+      "name": "OpenAI_GPT_4",
+      "description": "Set of optimizations for GPT_4.",
+      "owner": "development@openagentic.com",
+      "version": "1.0.0",
+      "vendor": "OpenAI",
+      "createdBy": "development@openagentic.com",
+      "createdDate": "01/01/2024",
+      "updatedDate": "01/01/2024",
+      "updatedBy": "development@openagentic.com",
+      "targets": [
+        {
+          "targetType": "JetPackForAI.Elevate.Core.ElevateN.LLMTasksN.QuestionAnswer",
+          "inputTargetType": "JetPackForAI.Elevate.Core.ElevateN.LLMTasksN.Sentence",
+          "outputTargetType": "JetPackForAI.Elevate.Core.ElevateN.LLMTasksN.SingleWord",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-4",
+              "modelName": "gpt-4",
+              "tempature": 0.2,
+              "ptop": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "question",
+                  "description": "is a sentence, used as input to create the <answer> field",
+                  "format": "Sentence",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 1,
+                  "allUperCase": false,
+                  "allLowerCase": false,
+                  "endWitFullStop": false
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "answer",
+                  "description": "is a single word, created by searching for the answer in the <question> field",
+                  "format": "SingleWord",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 1,
+                  "allUperCase": false,
+                  "allLowerCase": false,
+                  "endWitFullStop": false
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "What is the capital for France? Paris"
+                },
+                {
+                  "example": "Which element has the chemical symbol 'O'? Oxygen"
+                },
+                {
+                  "example": "What is the hardest natural substance on Earth? Diamond"
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

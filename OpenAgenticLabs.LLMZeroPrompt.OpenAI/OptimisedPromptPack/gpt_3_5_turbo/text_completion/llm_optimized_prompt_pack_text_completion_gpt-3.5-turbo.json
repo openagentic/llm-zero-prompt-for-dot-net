@@ -1,0 +1,74 @@
+{
+  "optimizedPromptPackItem": [
+    {
+      "name": "OpenAI_GPT_3.5_Turbo",
+      "description": "Set of optimizations for Text Completion.",
+      "owner": "development@openagentic.com",
+      "version": "1.0.0",
+      "vendor": "OpenAI",
+      "createdBy": "development@openagentic.com",
+      "createdDate": "01/01/2024",
+      "updatedDate": "01/01/2024",
+      "updatedBy": "development@openagentic.com",
+      "targets": [
+        {
+          "targetType": "TextCompletion",
+          "inputTargetType": "Paragraph",
+          "outputTargetType": "Paragraph",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.3,
+              "topP": 0.9,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "paragraph",
+                  "description": "The <paragraph> field is text to be used as input for Text Completion process, with the result going to the <completion> field",
+                  "format": "Paragraph",
+                  "maxChar": 1024,
+                  "minChar": 50,
+                  "minWords": 10,
+                  "maxWords": 100,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "completion",
+                  "description": "The <completion> field is output field from the Text Completion",
+                  "format": "Paragraph",
+                  "maxChar": 256,
+                  "minChar": 5,
+                  "minWords": 1,
+                  "maxWords": 20,
+                  "allUpperCase": false,
+                  "allLowerCase": false,
+                  "endWithFullStop": true
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "The old, abandoned house at the end of the street was said to be haunted. No one dared to enter, until one day...\r\n ....a brave group of children decided to explore the mysterious dwelling. As they crept through the creaky front door, a gust of cold wind sent shivers down their spines."
+                },
+                {
+                  "example": "In a world where robots had become an integral part of society, a young scientist named Liam made a groundbreaking discovery...\r\n ....he had developed an artificial intelligence unlike any other. This AI, which he named Ava, possessed the ability to learn, adapt, and even feel emotions."
+                },
+                {
+                  "example": "The small, coastal town was known for its delicious seafood and friendly locals. Every summer, tourists would flock to the town to...\r\n ...enjoy the sun-soaked beaches and savor the catch of the day. One such tourist was Emily, a young woman from the city who was desperate for a break from her hectic life."
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}>.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

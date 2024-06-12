@@ -1,0 +1,72 @@
+{
+  "optimizedPromptPackItem": [
+    {
+      "name": "OpenAI_GPT_3.5_Turbo",
+      "description": "Set of optimizations for GPT_3.5_Turbo Text Simplification.",
+      "owner": "development@openagentic.com",
+      "version": "1.0.0",
+      "vendor": "OpenAI",
+      "createdBy": "development@openagentic.com",
+      "createdDate": "01/01/2024",
+      "updatedDate": "01/01/2024",
+      "updatedBy": "development@openagentic.com",
+      "targets": [
+        {
+          "targetType": "TextSimplification",
+          "inputTargetType": "Paragraph",
+          "outputTargetType": "Paragraph",
+          "models": [
+            {
+              "modelVendorName": "openai",
+              "modelFamily": "gpt-3.5-turbo",
+              "modelName": "gpt-3.5-turbo",
+              "temperature": 0.7,
+              "topP": 1,
+              "Input": [
+                {
+                  "type": "string",
+                  "tag": "inputText",
+                  "description": "<inputText> is a text paragraph that needs to be simplified and the result output to the <simplifiedText> field",
+                  "format": "Paragraph",
+                  "maxChar": 2048,
+                  "minChar": 50,
+                  "minWords": 10,
+                  "maxWords": 200,
+                  "allUpperCase": false,
+                  "allLowerCase": false
+                }
+              ],
+              "Output": [
+                {
+                  "type": "string",
+                  "tag": "simplifiedText",
+                  "description": "<simplifiedText> field is the simplified version of the input <inputText>",
+                  "format": "Paragraph",
+                  "maxChar": 2048,
+                  "minChar": 50,
+                  "minWords": 10,
+                  "maxWords": 200,
+                  "allUpperCase": false,
+                  "allLowerCase": false
+                }
+              ],
+              "context": "",
+              "examples": [
+                {
+                  "example": "The Eiffel Tower, constructed from 1887 to 1889, is a wrought-iron lattice tower that has become both a global cultural icon of France and one of the most recognizable structures in the world.\r\n The Eiffel Tower is a famous iron tower in France. It was built from 1887 to 1889. It is one of the most well-known structures in the world and a symbol of French culture."
+                },
+                {
+                  "example": "The Great Wall of China is a series of fortifications that were built across the historical northern borders of ancient Chinese states and Imperial China to protect against nomadic invasions from the Eurasian Steppe.\r\n The Great Wall of China is a long wall that was built along the northern borders of ancient China. Its purpose was to protect China from attacks by nomadic tribes from the Eurasian Steppe."
+                },
+                {
+                  "example": "Photosynthesis is the process by which green plants and some other organisms use sunlight to synthesize nutrients from carbon dioxide and water. Photosynthesis in plants generally involves the green pigment chlorophyll and generates oxygen as a byproduct.\r\n Photosynthesis is how plants use sunlight to make their own food from carbon dioxide and water. The process needs the green pigment called chlorophyll. Oxygen is released as a waste product during photosynthesis."
+                }
+              ],
+              "promptTemplate": "Instruction: Given the input field <{{InputTag}}>, produce the output field <{{OutputTag}}> by simplifying the text to make it easier to understand.\n---\n\nContext: {{Context}}.\n\n---\n\nFields definition:\n\n{{{Format}}}.\n\n---\n\nOutput examples:\n{{Examples}}\n---\n\n{{Action}}?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

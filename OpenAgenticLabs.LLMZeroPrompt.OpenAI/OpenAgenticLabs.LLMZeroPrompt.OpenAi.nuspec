@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>OpenAgenticLabs.LLMZeroPrompt.OpenAI</id>
+    <version>1.0.2</version>
+    <title>LLM Zero Prompt</title>
+    <authors>Open Agentic Labs</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+     <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+   <iconUrl>https://openagenticpublicstorage.blob.core.windows.net/public/128.png</iconUrl>
+    <projectUrl>https://github.com/openagentic/llm-zero-prompt-for-dot-net</projectUrl>
+    <description>This library provides a zero prompt approch for interacting with LLMs</description>
+    <releaseNotes>This library provides a zero prompt approch for interacting with LLMs</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>AI LLM</tags>
+	<readme>README.md</readme>
+  </metadata>
+	<files>
+		<file src="bin\Release\net8.0\OpenAgenticLabs.LLMZeroPrompt.OpenAI.dll" target="lib\net8.0\" />
+		<file src="README.md" target="" />
+	</files>
+</package>

@@ -1,0 +1,31 @@
+{
+
+  "ModelInformation": [
+    {
+      "vendor": "OpenAI",
+      "Description": "Currently points to gpt-3.5-turbo.",
+      "family": "GPT_3.5_Turbo",
+      "name": "gpt_3.5_turbo",
+      "version": "3.5",
+      "parameterSize": 0,
+      "contextLength": 16385,
+      "gqa": true,
+      "knowledgeCutoff": "2021-09-01T00:00:00",
+      "hasOptimizedPromptPack": true,
+      "fileName": "llm_optimized_prompt_pack_question_answer_gpt-3.5-turbo.json"
+    },
+    {
+      "vendor": "OpenAI",
+      "Description": "The latest GPT_4 model with higher accuracy at responding in requested formats and a fix for a bug which caused a text encoding issue for non-English language function calls. Returns a maximum of 4,096 output tokens.",
+      "family": "GPT_4_Turbo",
+      "name": "gpt_4",
+      "version": "4",
+      "parameterSize": 0,
+      "contextLength": 16385,
+      "gqa": true,
+      "knowledgeCutoff": "2021-09-01T00:00:00",
+      "hasOptimizedPromptPack": true,
+      "fileName": "llm_optimized_promptPack_gpt-4.json"
+    }
+  ]
+}
